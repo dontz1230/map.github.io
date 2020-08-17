@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>地圖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" href="dist/augurio-taiwan.min.css"/>
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+      
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <div class="container" id="app">
+      <div class="selectPart">
+        <p>請選擇縣市</p>
+        <select name="" id="">
+          <option value="">新北市</option>
+        </select>
+        <p>請選擇鄰里</p>
+        <select name="" id="">
+          <option value="">土城區</option>
+        </select>
+        <div class="gov">
+          <p>請選擇部會</p>
+        
+        <input type="checkbox" v-model="gov" value="水利署" name="水利署" id="水利署">
+        <label for="水利署">水利署</label>
+        <input type="checkbox" v-model="gov" value="水保局" name="水保局" id="水保局">
+        <label for="水保局">水保局</label>
+        <input type="checkbox" v-model="gov" value="消防署" name="消防署" id="消防署">
+        <label for="消防署">消防署</label></div>
+       <div class="years">
+         <p>請選擇年份</p>
+          
+     <input type="checkbox" v-model="year" value="2004" name="2004" id="">    
+
+        <label for="2004">2004</label>
+       
+<input type="checkbox" v-model="year" value="2005" name="2005" id="">
+        <label for="2005">2005</label>
+        
+<input type="checkbox" v-model="year" value="2006" name="2006" id="">
+        <label for="2006">2006</label>
+        
+<input type="checkbox" v-model="year" value="2007" name="2007" id="">
+        <label for="2007">2007</label>
+        
+<input type="checkbox" v-model="year" value="2008" name="2008" id="">
+        <label for="2008">2008</label>
+        
+<input type="checkbox" v-model="year" value="2009" name="2009" id="">
+        <label for="2009">2009</label>
+        
+<input type="checkbox" v-model="year" value="2010" name="2010" id="">
+        <label for="2010">2010</label>
+        
+<input type="checkbox" v-model="year" value="2011" name="2011" id="">
+        <label for="2011">2011</label>
+        
+<input type="checkbox" v-model="year" value="2012" name="2012" id="">
+        <label for="2012">2012</label>
+        
+<input type="checkbox" v-model="year" value="2013" name="2013" id="">
+        <label for="2013">2013</label>
+        
+<input type="checkbox" v-model="year" value="2014" name="2014" id="">
+        <label for="2014">2014</label>
+        
+<input type="checkbox" v-model="year" value="2015" name="2015" id="">
+        <label for="2015">2015</label>
+        
+<input type="checkbox" v-model="year" value="2016" name="2016" id="">
+        <label for="2016">2016</label>
+        
+<input type="checkbox" v-model="year" value="2017" name="2017" id="">
+        <label for="2017">2017</label>
+        
+<input type="checkbox" v-model="year" value="2018" name="2018" id="">
+        <label for="2018">2018</label>
+        
+<input type="checkbox" v-model="year" value="2019" name="2019" id="">
+        <label for="2019">2019</label>
+        
+
+<input type="checkbox" v-model="year" value="2020"name="2020" id="">
+<label for="2020">2020<label>      
+
+</div>
+       <button @click="viewOutcome">看結果</button>
+      </div>
+      <div class="taiwan-map" ref="map">
+        <div id="map">
+          <svg id="svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+          <svg style="display:absolute" id="points" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+      </div>
+      <div class="table">
+        <div class="tableTop">
+          <div v-for="item in topics">{{item}}</div>
+        </div>
+        <div class="tableData">
+          <div v-for="item in forms">
+            <span>{{item.gov}}</span>
+            <span>{{item.year}}</span>
+            <span>{{item.name}}</span>
+            <span>{{item.city}}</span>
+            <span>{{item.place}}</span>
+            <span>{{item.type}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.4/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="dist/augurio-taiwan.js"></script>
+  </body>
+</html>

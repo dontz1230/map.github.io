@@ -1,0 +1,192 @@
+html,
+body,
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+    letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "微軟正黑體", "Microsoft JhengHei"
+}
+
+.container {
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    /* background: #232526;
+    background: -webkit-gradient(linear, left top, right top, from(#414345), to(#232526));
+    background: -webkit-linear-gradient(left, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526) */
+}
+
+.taiwan-map,
+.shop-list {
+    width: 50%;
+    height: 100%
+}
+
+.selectPart {
+        width: 25vw;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#map {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%
+}
+
+#map svg {
+    position: absolute;
+    max-height: 80vh
+}
+
+#map #svg path{
+     fill: rgb(154, 200, 154);
+} 
+
+#map path {
+    fill: transparent;
+    stroke: #777;
+    cursor: pointer;
+    -webkit-transition: fill .2s ease, stroke .2s ease, -webkit-transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, -webkit-transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, transform .2s ease, -webkit-transform .2s ease
+}
+
+#points path {
+    fill: rgb(239, 157, 157);
+    stroke: #777;
+    cursor: pointer;
+    -webkit-transition: fill .2s ease, stroke .2s ease, -webkit-transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, -webkit-transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, transform .2s ease;
+    transition: fill .2s ease, stroke .2s ease, transform .2s ease, -webkit-transform .2s ease
+}
+
+#map path:hover,
+#map path.active {
+    fill: rgba(255, 202, 40, 0.5);
+    stroke: #FFCA28;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+h1,
+h2 {
+    position: relative;
+    line-height: 2;
+    text-align: center;
+    font-weight: bold
+}
+
+h1 {
+    font-size: 5vw;
+    color: #FFCA28
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(30%, rgba(255, 255, 255, 0.8)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(70%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0) 100%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+h2 {
+    font-size: 4vw;
+    color: rgba(255, 255, 255, 0.8)
+}
+
+.shop-list {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap
+}
+
+.shop-list h1,
+.shop-list h2 {
+    width: 100%
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-wrap: wrap
+    }
+
+    .taiwan-map,
+    .shop-list {
+        width: 100%
+    }
+
+    .taiwan-map {
+        height: 80vh
+    }
+
+    .shop-list {
+        height: 20vh
+    }
+
+    h1 {
+        font-size: 8vw
+    }
+
+    h2 {
+        font-size: 6vw
+    }
+}
+
+p, select {
+    margin: 12px 0;
+}
+
+.tableTop {
+        display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-gap: 20px;
+    border-bottom: 1px solid cadetblue;
+    padding-bottom: 12px;;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    position: absolute;
+    bottom: 30px;
+}
+
+.tableData {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+}
+
+.tableData div {
+     display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-gap: 20px;
+    text-align: center;
+        
+    }
